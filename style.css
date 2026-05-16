@@ -168,3 +168,79 @@ hr{
   }
 
 }
+
+.header-nav{
+  display:flex;
+
+  align-items:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+}
+
+/* ドロップダウン本体 */
+.dropdown{
+  position:relative;
+}
+
+/* ボタン */
+.dropbtn{
+  background:none;
+
+  border:none;
+
+  color:white;
+
+  font-size:22px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  text-shadow:0 0 5px rgba(0,0,0,0.8);
+}
+
+/* 中身 */
+.dropdown-content{
+  display:none;
+
+  position:absolute;
+
+  top:100%;
+
+  left:0;
+
+  background:#111;
+
+  min-width:220px;
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+  z-index:999;
+}
+
+/* 中のリンク */
+.dropdown-content a{
+  display:block;
+
+  padding:14px 18px;
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:18px;
+}
+
+/* ホバー */
+.dropdown-content a:hover{
+  background:#7a2cff;
+}
+
+/* マウス乗せたら開く */
+.dropdown:hover .dropdown-content{
+  display:block;
+}
