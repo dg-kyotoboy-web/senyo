@@ -244,3 +244,62 @@ hr{
 .dropdown:hover .dropdown-content{
   display:block;
 }
+
+.dropdown{
+  position:relative;
+}
+
+.dropbtn{
+  background:none;
+  border:none;
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+  cursor:pointer;
+  text-shadow:0 0 5px rgba(0,0,0,0.8);
+}
+
+.dropdown-content{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#111;
+  min-width:220px;
+  z-index:999;
+}
+
+.dropdown:hover .dropdown-content{
+  display:block;
+}
+
+.dropdown-content a{
+  display:block;
+  padding:14px 18px;
+  color:white;
+  text-decoration:none;
+  font-size:17px;
+  white-space:nowrap;
+}
+
+.dropdown-content a:hover{
+  background:#7a2cff;
+}
+
+.submenu{
+  position:relative;
+}
+
+.submenu-content{
+  display:none;
+  position:absolute;
+  top:0;
+  left:100%;
+  background:#111;
+  min-width:180px;
+  z-index:1000;
+}
+
+.submenu:hover .submenu-content{
+  display:block;
+}
