@@ -1,55 +1,87 @@
-.site-header {
-  background: #111;
-  color: #fff;
-  padding: 18px 16px;
+body{
+  margin:0;
+  background:#f2f2f2;
+  font-family:sans-serif;
 }
 
-.header-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.site-header{
+  background-image:url("images/bg_header.png");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  min-height:220px;
+
+  position:relative;
 }
 
-.site-title h1 {
-  margin: 0;
-  font-size: 24px;
+.header-overlay{
+  background:rgba(0,0,0,0.25);
+
+  min-height:220px;
+
+  padding:20px;
 }
 
-.site-title p {
-  margin: 4px 0 0;
-  font-size: 13px;
-  color: #ccc;
+.header-inner{
+  max-width:1000px;
+
+  margin:0 auto;
 }
 
-.header-nav {
-  display: flex;
-  gap: 14px;
+.site-title h1{
+  color:white;
+
+  font-size:48px;
+
+  margin:0;
+
+  text-shadow:0 0 10px rgba(0,0,0,0.7);
 }
 
-.header-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 6px 8px;
+.site-title p{
+  color:white;
+
+  margin-top:10px;
+
+  font-size:18px;
 }
 
-.header-nav a:hover {
-  background: #333;
-  border-radius: 6px;
+.header-nav{
+  margin-top:30px;
+
+  display:flex;
+
+  gap:20px;
+
+  flex-wrap:wrap;
 }
 
-/* スマホ表示 */
-@media (max-width: 600px) {
-  .header-inner {
-    display: block;
-    text-align: center;
-  }
+.header-nav a{
+  color:white;
 
-  .header-nav {
-    margin-top: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  text-decoration:none;
+
+  font-size:22px;
+
+  font-weight:bold;
+
+  text-shadow:0 0 5px rgba(0,0,0,0.8);
+}
+
+main{
+  max-width:1000px;
+
+  margin:30px auto;
+
+  padding:0 20px;
+}
+
+.box{
+  background:white;
+
+  padding:20px;
+
+  border-radius:10px;
 }
