@@ -97,7 +97,7 @@ body{
 }
 
 /* =========================
-   ドロップダウン
+   ドロップダウンメニュー
 ========================= */
 
 .dropdown{
@@ -106,45 +106,22 @@ body{
 
 .dropbtn{
   background:none;
-
   border:none;
-
   color:white;
-
   font-size:22px;
-
   font-weight:bold;
-
   cursor:pointer;
-
   text-shadow:0 0 5px rgba(0,0,0,0.8);
 }
 
-.dropbtn:hover{
-  color:#d8b4ff;
-}
-
-/* 一段目メニュー */
-
 .dropdown-content{
   display:none;
-
   position:absolute;
-
   top:100%;
-
   left:0;
-
   background:#111;
-
   min-width:220px;
-
-  border-radius:10px;
-
-  overflow:hidden;
-
-  z-index:999;
-
+  z-index:9999;
   box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
@@ -154,15 +131,10 @@ body{
 
 .dropdown-content a{
   display:block;
-
   padding:14px 18px;
-
   color:white;
-
   text-decoration:none;
-
   font-size:17px;
-
   white-space:nowrap;
 }
 
@@ -171,37 +143,41 @@ body{
 }
 
 /* =========================
-   二段階メニュー
+   二段目メニュー
 ========================= */
 
 .submenu{
   position:relative;
+  display:block;
+}
+
+.submenu > a{
+  display:block;
+  padding:14px 18px;
 }
 
 .submenu-content{
   display:none;
-
   position:absolute;
-
   top:0;
-
   left:100%;
-
   background:#111;
-
   min-width:180px;
-
-  border-radius:10px;
-
-  overflow:hidden;
-
-  z-index:1000;
-
+  z-index:10000;
   box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
 .submenu:hover .submenu-content{
   display:block;
+}
+
+.submenu-content a{
+  display:block;
+  padding:14px 18px;
+}
+
+.submenu-content a:hover{
+  background:#7a2cff;
 }
 
 /* =========================
