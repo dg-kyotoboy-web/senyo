@@ -50,3 +50,11 @@ main {
   border-radius: 8px;
   text-decoration: none;
 }
+
+.banner{
+  width:100%;
+  max-width:1000px;
+  display:block;
+  margin:20px auto;
+  border-radius:10px;
+}
