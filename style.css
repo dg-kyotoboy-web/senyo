@@ -1,60 +1,55 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #f2f2f2;
-  color: #333;
-}
-
-header {
+.site-header {
   background: #111;
-  color: white;
-  text-align: center;
-  padding: 30px 15px;
+  color: #fff;
+  padding: 18px 16px;
 }
 
-header h1 {
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
 }
 
-header p {
-  margin: 10px 0 0;
-  font-size: 14px;
+.site-title p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #ccc;
 }
 
-main {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 15px;
+.header-nav {
+  display: flex;
+  gap: 14px;
 }
 
-.box {
-  background: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-
-.box h2 {
-  margin-top: 0;
-  border-left: 5px solid #111;
-  padding-left: 10px;
-}
-
-.button {
-  display: inline-block;
-  background: #111;
-  color: white;
-  padding: 12px 18px;
-  margin: 5px;
-  border-radius: 8px;
+.header-nav a {
+  color: #fff;
   text-decoration: none;
+  font-size: 14px;
+  padding: 6px 8px;
 }
 
-.banner{
-  width:100%;
-  max-width:1000px;
-  display:block;
-  margin:20px auto;
-  border-radius:10px;
+.header-nav a:hover {
+  background: #333;
+  border-radius: 6px;
+}
+
+/* スマホ表示 */
+@media (max-width: 600px) {
+  .header-inner {
+    display: block;
+    text-align: center;
+  }
+
+  .header-nav {
+    margin-top: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
