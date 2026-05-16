@@ -1,8 +1,16 @@
+/* =========================
+   基本設定
+========================= */
+
 body{
   margin:0;
   background:#f2f2f2;
   font-family:sans-serif;
 }
+
+/* =========================
+   ヘッダー背景
+========================= */
 
 .site-header{
   background-image:url("images/bg_header.png");
@@ -27,10 +35,14 @@ body{
 }
 
 .header-inner{
-  max-width:1000px;
+  max-width:1200px;
 
   margin:0 auto;
 }
+
+/* =========================
+   サイトタイトル
+========================= */
 
 .site-title h1{
   color:white;
@@ -48,19 +60,27 @@ body{
   margin-top:10px;
 
   font-size:18px;
+
+  text-shadow:0 0 5px rgba(0,0,0,0.7);
 }
+
+/* =========================
+   ヘッダーメニュー
+========================= */
 
 .header-nav{
   margin-top:30px;
 
   display:flex;
 
+  align-items:center;
+
   gap:20px;
 
   flex-wrap:wrap;
 }
 
-.header-nav a{
+.header-nav > a{
   color:white;
 
   text-decoration:none;
@@ -72,6 +92,122 @@ body{
   text-shadow:0 0 5px rgba(0,0,0,0.8);
 }
 
+.header-nav > a:hover{
+  color:#d8b4ff;
+}
+
+/* =========================
+   ドロップダウン
+========================= */
+
+.dropdown{
+  position:relative;
+}
+
+.dropbtn{
+  background:none;
+
+  border:none;
+
+  color:white;
+
+  font-size:22px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  text-shadow:0 0 5px rgba(0,0,0,0.8);
+}
+
+.dropbtn:hover{
+  color:#d8b4ff;
+}
+
+/* 一段目メニュー */
+
+.dropdown-content{
+  display:none;
+
+  position:absolute;
+
+  top:100%;
+
+  left:0;
+
+  background:#111;
+
+  min-width:220px;
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+  z-index:999;
+
+  box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.dropdown:hover .dropdown-content{
+  display:block;
+}
+
+.dropdown-content a{
+  display:block;
+
+  padding:14px 18px;
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:17px;
+
+  white-space:nowrap;
+}
+
+.dropdown-content a:hover{
+  background:#7a2cff;
+}
+
+/* =========================
+   二段階メニュー
+========================= */
+
+.submenu{
+  position:relative;
+}
+
+.submenu-content{
+  display:none;
+
+  position:absolute;
+
+  top:0;
+
+  left:100%;
+
+  background:#111;
+
+  min-width:180px;
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+  z-index:1000;
+
+  box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.submenu:hover .submenu-content{
+  display:block;
+}
+
+/* =========================
+   メインエリア
+========================= */
+
 main{
   max-width:1000px;
 
@@ -80,13 +216,25 @@ main{
   padding:0 20px;
 }
 
+/* =========================
+   BOX
+========================= */
+
 .box{
   background:white;
 
   padding:20px;
 
   border-radius:10px;
+
+  margin-bottom:20px;
+
+  box-shadow:0 0 10px rgba(0,0,0,0.08);
 }
+
+/* =========================
+   QRページ
+========================= */
 
 .qr-page{
   max-width:1000px;
@@ -148,8 +296,24 @@ hr{
   margin:20px 0;
 }
 
-/* スマホ */
+/* =========================
+   スマホ対応
+========================= */
+
 @media (max-width:700px){
+
+  .header-nav{
+    gap:12px;
+  }
+
+  .header-nav > a,
+  .dropbtn{
+    font-size:18px;
+  }
+
+  .site-title h1{
+    font-size:36px;
+  }
 
   .qr-box{
     flex-direction:column;
@@ -167,139 +331,10 @@ hr{
     font-size:40px;
   }
 
-}
+  .submenu-content{
+    left:0;
 
-.header-nav{
-  display:flex;
+    top:100%;
+  }
 
-  align-items:center;
-
-  gap:20px;
-
-  flex-wrap:wrap;
-}
-
-/* ドロップダウン本体 */
-.dropdown{
-  position:relative;
-}
-
-/* ボタン */
-.dropbtn{
-  background:none;
-
-  border:none;
-
-  color:white;
-
-  font-size:22px;
-
-  font-weight:bold;
-
-  cursor:pointer;
-
-  text-shadow:0 0 5px rgba(0,0,0,0.8);
-}
-
-/* 中身 */
-.dropdown-content{
-  display:none;
-
-  position:absolute;
-
-  top:100%;
-
-  left:0;
-
-  background:#111;
-
-  min-width:220px;
-
-  border-radius:10px;
-
-  overflow:hidden;
-
-  z-index:999;
-}
-
-/* 中のリンク */
-.dropdown-content a{
-  display:block;
-
-  padding:14px 18px;
-
-  color:white;
-
-  text-decoration:none;
-
-  font-size:18px;
-}
-
-/* ホバー */
-.dropdown-content a:hover{
-  background:#7a2cff;
-}
-
-/* マウス乗せたら開く */
-.dropdown:hover .dropdown-content{
-  display:block;
-}
-
-.dropdown{
-  position:relative;
-}
-
-.dropbtn{
-  background:none;
-  border:none;
-  color:white;
-  font-size:22px;
-  font-weight:bold;
-  cursor:pointer;
-  text-shadow:0 0 5px rgba(0,0,0,0.8);
-}
-
-.dropdown-content{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#111;
-  min-width:220px;
-  z-index:999;
-}
-
-.dropdown:hover .dropdown-content{
-  display:block;
-}
-
-.dropdown-content a{
-  display:block;
-  padding:14px 18px;
-  color:white;
-  text-decoration:none;
-  font-size:17px;
-  white-space:nowrap;
-}
-
-.dropdown-content a:hover{
-  background:#7a2cff;
-}
-
-.submenu{
-  position:relative;
-}
-
-.submenu-content{
-  display:none;
-  position:absolute;
-  top:0;
-  left:100%;
-  background:#111;
-  min-width:180px;
-  z-index:1000;
-}
-
-.submenu:hover .submenu-content{
-  display:block;
 }
