@@ -413,3 +413,15 @@ hr{
     font-size:24px;
   }
 }
+
+.course-title{
+  text-align:center;
+}
+
+.course-subtitle{
+  display:block;
+
+  font-size:0.7em;
+
+  margin-top:8px;
+}
