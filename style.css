@@ -295,6 +295,11 @@ hr{
     flex-direction:column;
   }
 
+  .qr-info{
+    text-align:center;
+    width:100%;
+  }
+
   .qr-title{
     font-size:32px;
   }
@@ -309,7 +314,6 @@ hr{
 
   .submenu-content{
     left:0;
-
     top:100%;
   }
 
