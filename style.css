@@ -318,3 +318,98 @@ hr{
   }
 
 }
+
+/* =========================
+   コースページ
+========================= */
+
+.course-page{
+  max-width:1000px;
+  margin:0 auto;
+  padding:30px 20px;
+  background:#f7f7f7;
+}
+
+.course-title{
+  text-align:center;
+  color:#e56b6b;
+  font-size:46px;
+  margin:0 0 25px;
+}
+
+.course-note-box{
+  font-size:16px;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.course-note-box p{
+  margin:2px 0;
+}
+
+.course-note-box span{
+  color:red;
+}
+
+.course-row{
+  display:grid;
+  grid-template-columns:1.1fr 1fr 1fr;
+  align-items:center;
+  gap:35px;
+  padding:28px 0;
+  border-top:1px solid #ccc;
+}
+
+.course-name{
+  font-size:30px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.price-box{
+  text-align:center;
+}
+
+.price-label{
+  background:#ddd;
+  color:#555;
+  font-size:28px;
+  font-weight:bold;
+  border-radius:8px;
+  padding:4px 0;
+  margin-bottom:12px;
+}
+
+.price{
+  color:red;
+  font-size:26px;
+  font-weight:bold;
+}
+
+.bottom{
+  margin-top:25px;
+}
+
+/* スマホ */
+@media (max-width:700px){
+  .course-title{
+    font-size:34px;
+  }
+
+  .course-row{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .course-name{
+    font-size:26px;
+  }
+
+  .price-label{
+    font-size:24px;
+  }
+
+  .price{
+    font-size:24px;
+  }
+}
