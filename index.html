@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,135 +12,82 @@
 
 <body>
 
-<div id="header"></div>
+  <!-- ヘッダー -->
+  <div id="header"></div>
 
-<main>
+  <!-- 更新情報 -->
+  <div id="news"></div>
 
-  <div style="max-width:900px;margin:0 auto 20px auto;border:1px solid #eee;border-radius:12px;padding:14px 16px;background:#fff;">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
-        <div style="font-weight:bold;font-size:18px;">
-            更新情報
-        </div>
-        <a href="https://dgdgdg-kyoto-boy.jimdofree.com/%E6%9B%B4%E6%96%B0%E6%83%85%E5%A0%B1/" style="font-size:13px;text-decoration:none;">一覧はこちら ▶</a>
-    </div>
-    <!-- スクロール枠はここだけ（1つだけ） -->
+  <!-- メイン -->
+  <main>
 
-    <div style="margin-top:10px;max-height:160px;overflow-y:auto;padding-right:8px;line-height:1.8;">
-      <!-- 2026.05.22-->
+    <section class="top-guide">
 
-        <div style="font-size:12px;color:#888;">
-            2026.05.22
-        </div>
+      <p>※コース料金などの詳細やイクペイ支払い時のQRコードなどを掲載しています。</p>
+      <p>※割引に関しても掲載しているので、お客様に聞かれた際に確認することをお勧めします。</p>
+      <p>※イクペイ決済において割引がある場合は、店舗まで連絡してください。</p>
+      <p>※各ページのスタンダードコースは、【イクペイQR】や【コース一覧】のタブで見れます。</p>
 
-        <div style="border-top:1px dotted #ddd;margin:8px 0;">
-        </div>
+    </section>
 
-        <div style="margin-top:6px;">
-            ● Q ＆ Aのページを追加しました。
-        </div>
+    <section class="manager-message">
 
-        <div style="border-top:1px dotted #ddd;margin:10px 0;">
-        </div>
-        <!-- 2026.05.21-->
+      <hr>
 
-        <div style="font-size:12px;color:#888;">
-            2026.05.21
-        </div>
+      <img src="images/マスター画像.jpg" alt="京都店店長" class="manager-photo">
 
-        <div style="border-top:1px dotted #ddd;margin:8px 0;">
-        </div>
+      <div class="message-text">
 
-        <div style="margin-top:6px;">
-            ● コース一覧のページを追加しました。
-        </div>
+        <p>
+          ホームページをご覧いただき、誠にありがとうございます。<br>
+          男子学園京都店の神威凌斗です。
+        </p>
 
-        <div style="border-top:1px dotted #ddd;margin:10px 0;">
-        </div>
-      <!-- 2026.05.19 -->
+        <p>
+          私たちは創業以来、「信頼」と「誠実」を大切にし、お客様・取引先様・地域社会とのつながりを第一に考えながら事業に取り組んでまいりました。
+          時代の変化が激しい現代においても、常に本質を見失うことなく、価値あるサービスを提供し続けることが私たちの使命であると考えております。
+        </p>
 
-        <div style="font-size:12px;color:#888;">
-            2026.05.19
-        </div>
+        <p>
+          また、企業は人によって支えられる存在です。
+          社員一人ひとりがやりがいと誇りを持ち、成長し続けられる環境づくりを行うことが、結果としてお客様へのより良い価値提供につながると信じています。
+        </p>
 
-        <div style="border-top:1px dotted #ddd;margin:8px 0;">
-        </div>
+        <p>
+          これからも社会のニーズに真摯に向き合い、挑戦を恐れず、皆様から信頼され続ける企業を目指してまいります。<br>
+          今後とも変わらぬご支援、ご指導を賜りますよう、よろしくお願い申し上げます。
+        </p>
 
-        <div style="margin-top:6px;">
-            ● イクペイQRのページを追加しました。
-        </div>
+        <p>
+          京都店店長<br>
+          神威凌斗
+        </p>
 
-        <div style="border-top:1px dotted #ddd;margin:10px 0;">
-        </div>
-        <!-- 2026.05.19 -->
+      </div>
 
-        <div style="font-size:12px;color:#888;">
-            2026.05.18
-        </div>
+      <hr>
 
-        <div style="border-top:1px dotted #ddd;margin:8px 0;">
-        </div>
+    </section>
 
-        <div style="margin-top:6px;">
-            ● 京都店BOY用HPを公開しました
-        </div>
-    </div>
-</div>
+  </main>
 
-</main>
+  <!-- header読み込み -->
+  <script>
+    fetch("parts/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
 
-<section class="top-guide">
+  <!-- news読み込み -->
+  <script>
+    fetch("parts/news.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("news").innerHTML = data;
+      });
+  </script>
 
-  <p>※コース料金などの詳細やイクペイ支払い時のQRコードなどを掲載しています。</p>
-  <p>※割引に関しても掲載しているので、お客様に聞かれた際に確認することをお勧めします。</p>
-  <p>※イクペイ決済において割引がある場合は、店舗まで連絡してください。</p>
-  <p>※各ページのスタンダードコースは、【イクペイQR】や【コース一覧】のタブで見れます。</p>
-
-</section>
-
-<section class="manager-message">
-
-  <hr>
-
-  <img src="images/マスター画像.jpg" alt="京都店店長" class="manager-photo">
-
-  <div class="message-text">
-    <p>
-      ホームページをご覧いただき、誠にありがとうございます。<br>
-      男子学園京都店の神威凌斗です。
-    </p>
-
-    <p>
-      私たちは創業以来、「信頼」と「誠実」を大切にし、お客様・取引先様・地域社会とのつながりを第一に考えながら事業に取り組んでまいりました。
-      時代の変化が激しい現代においても、常に本質を見失うことなく、価値あるサービスを提供し続けることが私たちの使命であると考えております。
-    </p>
-
-    <p>
-      また、企業は人によって支えられる存在です。
-      社員一人ひとりがやりがいと誇りを持ち、成長し続けられる環境づくりを行うことが、結果としてお客様へのより良い価値提供につながると信じています。
-    </p>
-
-    <p>
-      これからも社会のニーズに真摯に向き合い、挑戦を恐れず、皆様から信頼され続ける企業を目指してまいります。<br>
-      今後とも変わらぬご支援、ご指導を賜りますよう、よろしくお願い申し上げます。
-    </p>
-
-    <p>
-      京都店店長<br>
-      神威凌斗
-    </p>
-  </div>
-
-  <hr>
-
-</section>  
-  
-<script>
-fetch("parts/header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-  });
-</script>
-  
 </body>
 </html>
