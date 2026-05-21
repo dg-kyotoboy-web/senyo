@@ -434,3 +434,39 @@ hr{
 .red{
   color:red;
 }
+
+.course-warning{
+  background:white;
+
+  border:2px solid #ffb3b3;
+
+  border-left:8px solid #ff5a5a;
+
+  border-radius:12px;
+
+  padding:16px 20px;
+
+  margin:20px 0;
+
+  box-shadow:0 0 10px rgba(0,0,0,0.05);
+}
+
+.course-warning p{
+  margin:4px 0;
+
+  line-height:1.7;
+}
+
+.warning-title{
+  font-size:20px;
+
+  font-weight:bold;
+
+  color:#ff4d4d;
+
+  margin-bottom:10px;
+}
+
+.red{
+  color:red;
+}
