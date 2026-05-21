@@ -567,3 +567,62 @@ hr{
 .bold{
   font-weight:bold;
 }
+
+.top-guide{
+  max-width:1000px;
+  margin:30px auto;
+  padding:20px;
+  background:white;
+  border-radius:12px;
+  font-weight:bold;
+  line-height:1.8;
+}
+
+.top-guide p{
+  margin:4px 0;
+}
+
+.manager-message{
+  max-width:1000px;
+  margin:30px auto;
+  padding:0 20px 30px;
+  line-height:1.8;
+}
+
+.manager-message hr{
+  border:none;
+  border-top:1px dotted #999;
+  margin:24px 0;
+}
+
+.manager-photo{
+  width:280px;
+  max-width:100%;
+  display:block;
+  margin:0 0 14px;
+}
+
+.message-text{
+  font-size:16px;
+  color:#333;
+}
+
+.message-text p{
+  margin:8px 0;
+}
+
+/* スマホ */
+@media (max-width:700px){
+  .top-guide{
+    margin:20px;
+    font-size:15px;
+  }
+
+  .manager-message{
+    padding:0 20px 30px;
+  }
+
+  .manager-photo{
+    width:220px;
+  }
+}
