@@ -425,3 +425,8 @@ hr{
 
   margin-top:8px;
 }
+
+.course-note-box p{
+  margin:0;
+  line-height:1.7;
+}
