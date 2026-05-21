@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BOY専用ページ</title>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<!-- =========================
+     QAページ
+========================= -->
+
+<main class="qa-page">
+
+  <h2 class="qa-title">PREMIUMチケットに関して</h2>
+
+  <!-- =========================
+      ① 片道交通費無料
+========================= -->
+  
+   <section class="qa-lead">
+    <p>
+      <strong>Q.</strong>
+      PREMIUMチケットの使い方は？併用はできますか？
+    </p>
+
+    <p>
+      <strong>A.</strong>
+      PREMIUMチケットは春・夏・冬に販売されるPREMIUM SELECTIONを購入すると貰えるものになります。<br>
+      種類に関しましては、都度変更になりますのでご注意ください。
+    </p>
+
+    <p class="red bold">
+      ※詳細に関しては、以下参照
+    </p>
+  </section>
+
+  <details class="qa-box" open>
+    <summary>① 片道交通費無料</summary>
+
+    <div class="qa-content-block">
+      <h3>内容</h3>
+      <p>
+        チケット1枚の使用につき、片道の交通費が最大￥1,000まで無料となります。<br>
+        チケットを2枚使用した場合、往復分の交通費（最大￥2,000まで）が無料となります。<br>
+        なお、他店呼出（神戸店・なんば店）に関しましては、チケット2枚の使用で往復分の交通費が全額無料となります。
+      </p>
+
+      <h3>注意事項</h3>
+      <p>
+        ※無料上限金額を超えた場合、超過分はお客様負担となります。
+      </p>
+
+      <h3>併用可能物</h3>
+      <p>
+        KOクーポン / ギフト / イクポン / サービスタイム / メンバーズ特典 / チケット特典
+      </p>
+    </div>
+  </details>
+
+  <details class="qa-box" open>
+    <summary>② 貸切コース延長60分無料</summary>
+
+    <div class="qa-content-block">
+      <h3>内容</h3>
+      <p>
+        チケット1枚の使用で、各種貸切コース（19時間貸切 / 24時間貸切 / 30時間貸切）において、
+        延長60分を無料で追加することが可能です。
+      </p>
+
+      <h3>注意事項</h3>
+      <p>
+        ※1コースにつきチケット1枚のみ使用可能<br>
+        ※当日の利用については、ボーイのシフト状況により延長できない場合があります
+      </p>
+
+      <h3>併用可能物</h3>
+      <p>
+        KOクーポン / ギフト / イクポン / メンバーズ特典 / チケット特典
+      </p>
+    </div>
+  </details>
+
+  <details class="qa-box">
+    <summary>③ 30時間貸切</summary>
+
+    <div class="qa-content-block">
+      <p>
+        ここに詳細を入力してください。
+      </p>
+    </div>
+  </details>
+
+  <details class="qa-box">
+    <summary>④ ランキングポイント 20pt</summary>
+
+    <div class="qa-content-block">
+      <p>
+        ここに詳細を入力してください。
+      </p>
+    </div>
+  </details>
+
+  <details class="qa-box">
+    <summary>⑤ 新作DVDがもらえる</summary>
+
+    <div class="qa-content-block">
+      <p>
+        ここに詳細を入力してください。
+      </p>
+    </div>
+  </details>
+
+  <details class="qa-box">
+    <summary>⑥ ペケナナLiveポイント5,000pt付与</summary>
+
+    <div class="qa-content-block">
+      <p>
+        ここに詳細を入力してください。
+      </p>
+    </div>
+  </details>
+
+</main>
+
+<script>
+fetch("../parts/header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+</body>
+</html>
