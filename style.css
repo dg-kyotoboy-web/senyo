@@ -546,3 +546,24 @@ hr{
 .red{
   color:red;
 }
+
+.qa-lead{
+  background:white;
+  border-radius:12px;
+  padding:20px;
+  margin-bottom:20px;
+  line-height:1.8;
+}
+
+.qa-content-block{
+  margin-top:16px;
+}
+
+.qa-content-block h3{
+  font-size:17px;
+  margin:22px 0 8px;
+}
+
+.bold{
+  font-weight:bold;
+}
