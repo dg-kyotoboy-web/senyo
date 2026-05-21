@@ -16,7 +16,7 @@
   <div id="header"></div>
 
   <!-- 更新情報 -->
-  <div id="更新情報"></div>
+  <div id="news"></div>
 
   <!-- メイン -->
   <main>
@@ -82,7 +82,7 @@
 
   <!-- news読み込み -->
   <script>
-    fetch("parts/更新情報.html")
+    fetch("parts/news.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("news").innerHTML = data;
