@@ -470,3 +470,13 @@ hr{
 .red{
   color:red;
 }
+
+.course-warning.small{
+  margin:10px 0 22px;
+  padding:12px 16px;
+  font-size:15px;
+}
+
+.course-warning.small p{
+  margin:3px 0;
+}
