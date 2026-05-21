@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>BOY専用ページ</title>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<!-- =========================
+     QRページ
+========================= -->
+
+<main class="qa-page">
+
+  <h2 class="qa-title">遠方料金に関して</h2>
+
+  <details class="qa-box" open>
+    <summary>遠方料金が発生する場合①</summary>
+
+    <ul>
+      <li>
+        京都店最寄駅(四条駅・烏丸駅)から出張先(自宅orホテル)までの所要時間が
+        <span class="red">40分以上</span>
+        かかる場合に発生します。
+      </li>
+    </ul>
+
+    <div class="qa-warning">
+      <div class="warning-title">注意事項</div>
+
+      <p>※京都店最寄駅から出張先の最寄駅までの所要時間は<span class="red">ヤフー乗換で調べること。</span></p>
+      <p>※出張先最寄駅から出張先(自宅orホテル)までの移動時間は、<span class="red">Googleマップを使用して調べること。</span></p>
+      <p>※電車の移動時間とGoogleマップで調べた時間の累計が<span class="red">40分を超える場合に発生する。</span></p>
+    </div>
+  </details>
+
+  <details class="qa-box">
+    <summary>遠方料金が発生する場合②</summary>
+
+    <p>
+      出張先の最寄駅までの電車移動時間が40分未満でも、駅から出張先までの移動時間を含めて
+      <span class="red">合計40分を超える場合</span>
+      は遠方料金が発生します。
+    </p>
+  </details>
+
+  <details class="qa-box">
+    <summary>遠方料金が発生しない場合①</summary>
+
+    <p>
+      出張先の最寄駅が、各店舗の最寄駅と同じ場合は遠方料金は発生しません。
+    </p>
+
+    <h3 class="station-title">各店舗の最寄駅一覧</h3>
+
+    <details class="station-box" open>
+      <summary>大阪店</summary>
+
+      <ul>
+        <li>阪急大阪梅田駅</li>
+        <li>阪神大阪梅田駅</li>
+        <li>地下鉄東梅田駅</li>
+        <li>地下鉄西梅田駅</li>
+        <li>地下鉄梅田駅</li>
+        <li>JR北新地駅</li>
+        <li>JR大阪駅</li>
+        <li>中崎町駅</li>
+      </ul>
+    </details>
+
+    <details class="station-box">
+      <summary>なんば店</summary>
+
+      <ul>
+        <li>なんば駅</li>
+        <li>大阪難波駅</li>
+        <li>JR難波駅</li>
+      </ul>
+    </details>
+
+    <details class="station-box">
+      <summary>神戸店</summary>
+
+      <ul>
+        <li>三宮駅</li>
+        <li>神戸三宮駅</li>
+        <li>三ノ宮駅</li>
+      </ul>
+    </details>
+  </details>
+
+</main>
+
+<script>
+fetch("../parts/header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+</body>
+</html>
