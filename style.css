@@ -1,5 +1,5 @@
 /* =========================
-   基本設定
+   01. 基本設定
 ========================= */
 
 body{
@@ -8,97 +8,91 @@ body{
   font-family:sans-serif;
 }
 
+main{
+  max-width:1000px;
+  margin:30px auto;
+  padding:0 20px;
+}
+
+hr{
+  border:none;
+  border-top:1px solid #bbb;
+  margin:20px 0;
+}
+
+.red{
+  color:red;
+}
+
+.bold{
+  font-weight:bold;
+}
+
+
 /* =========================
-   ヘッダー背景
+   02. ヘッダー
 ========================= */
 
 .site-header{
   background-image:url("images/bg_header.png");
-
   background-repeat:repeat-x;
-
   background-size:auto 100%;
-
   background-position:center top;
-
   min-height:220px;
-
   position:relative;
+  overflow:visible;
 }
 
 .header-overlay{
   background:rgba(0,0,0,0.25);
-
   min-height:220px;
-
   padding:20px;
+  overflow:visible;
 }
 
 .header-inner{
   max-width:1200px;
-
   margin:0 auto;
 }
 
-/* =========================
-   サイトタイトル
-========================= */
-
 .site-title h1{
   color:white;
-
   font-size:48px;
-
   margin:0;
-
   text-shadow:0 0 10px rgba(0,0,0,0.7);
 }
 
 .site-title p{
   color:white;
-
   margin-top:10px;
-
   font-size:18px;
-
   text-shadow:0 0 5px rgba(0,0,0,0.7);
 }
 
+
 /* =========================
-   ヘッダーメニュー
+   03. PCメニュー
 ========================= */
 
 .header-nav{
   margin-top:30px;
-
   display:flex;
-
   align-items:center;
-
   gap:20px;
-
   flex-wrap:wrap;
 }
 
 .header-nav > a{
   color:white;
-
   text-decoration:none;
-
   font-size:22px;
-
   font-weight:bold;
-
   text-shadow:0 0 5px rgba(0,0,0,0.8);
 }
 
 .header-nav > a:hover{
   color:#d8b4ff;
 }
-
-/* =========================
-   ドロップダウンメニュー
-========================= */
 
 .dropdown{
   position:relative;
@@ -142,10 +136,6 @@ body{
   background:#7a2cff;
 }
 
-/* =========================
-   二段目メニュー
-========================= */
-
 .submenu{
   position:relative;
   display:block;
@@ -180,453 +170,118 @@ body{
   background:#7a2cff;
 }
 
-/* =========================
-   メインエリア
-========================= */
-
-main{
-  max-width:1000px;
-
-  margin:30px auto;
-
-  padding:0 20px;
-}
 
 /* =========================
-   BOX
+   04. スマホメニュー
 ========================= */
 
-.box{
-  background:white;
-
-  padding:20px;
-
-  border-radius:10px;
-
-  margin-bottom:20px;
-
-  box-shadow:0 0 10px rgba(0,0,0,0.08);
+.menu-toggle{
+  display:none;
 }
-
-/* =========================
-   QRページ
-========================= */
-
-.qr-page{
-  max-width:1000px;
-
-  margin:0 auto;
-
-  padding:40px 20px;
-
-  background:#efefef;
-}
-
-.qr-title{
-  text-align:center;
-
-  color:#e26d6d;
-
-  font-size:48px;
-
-  margin-bottom:50px;
-}
-
-.qr-box{
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  gap:40px;
-
-  padding:30px 0;
-}
-
-.qr-info h3{
-  font-size:42px;
-
-  margin:0 0 20px;
-}
-
-.qr-info p{
-  font-size:54px;
-
-  font-weight:bold;
-
-  margin:0;
-}
-
-.qr-image img{
-  width:400px;
-
-  max-width:100%;
-}
-
-hr{
-  border:none;
-
-  border-top:1px solid #bbb;
-
-  margin:20px 0;
-}
-
-/* =========================
-   スマホ対応
-========================= */
 
 @media (max-width:700px){
 
-  .header-nav{
-    gap:12px;
+  .menu-toggle{
+    display:block;
+    position:absolute;
+    top:16px;
+    right:16px;
+    z-index:10001;
+    background:none;
+    border:none;
+    color:white;
+    font-size:34px;
+    cursor:pointer;
   }
 
-  .header-nav > a,
-  .dropbtn{
+  .header-nav{
+    display:none;
+  }
+
+  .header-nav.active{
+    display:block;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:#fff;
+    z-index:10000;
+    padding-top:60px;
+    overflow-y:auto;
+    margin-top:0;
+  }
+
+  .header-nav.active a,
+  .header-nav.active .dropbtn{
+    color:#333;
+    text-shadow:none;
     font-size:18px;
+  }
+
+  .header-nav.active > a,
+  .header-nav.active .dropdown{
+    display:block;
+    border-bottom:1px solid #eee;
+  }
+
+  .header-nav.active > a,
+  .header-nav.active .dropbtn{
+    width:100%;
+    padding:16px 24px;
+    text-align:left;
+  }
+
+  .dropdown-content,
+  .submenu-content{
+    position:static;
+    display:none;
+    box-shadow:none;
+    background:#f8f8f8;
+    border-radius:0;
+  }
+
+  .dropdown.open .dropdown-content{
+    display:block;
+  }
+
+  .submenu.open .submenu-content{
+    display:block;
+  }
+
+  .dropdown-content a{
+    color:#333;
+    padding:14px 40px;
+  }
+
+  .submenu-content a{
+    padding-left:60px;
+    background:#fff;
   }
 
   .site-title h1{
     font-size:36px;
   }
 
-  .qr-box{
-    flex-direction:column;
-  }
-
-  .qr-info{
-    text-align:center;
-    width:100%;
-  }
-
-  .qr-title{
-    font-size:32px;
-  }
-
-  .qr-info h3{
-    font-size:30px;
-  }
-
-  .qr-info p{
-    font-size:40px;
-  }
-
-  .submenu-content{
-    left:0;
-    top:100%;
-  }
-
 }
+
 
 /* =========================
-   コースページ
+   05. 共通BOX
 ========================= */
 
-.course-page{
-  max-width:1000px;
-  margin:0 auto;
-  padding:30px 20px;
-  background:#f7f7f7;
-}
-
-.course-title{
-  text-align:center;
-  color:#e56b6b;
-  font-size:46px;
-  margin:0 0 25px;
-}
-
-.course-note-box{
-  font-size:16px;
-  line-height:1.7;
-  margin-bottom:20px;
-}
-
-.course-note-box p{
-  margin:2px 0;
-}
-
-.course-note-box span{
-  color:red;
-}
-
-.course-row{
-  display:grid;
-  grid-template-columns:1.1fr 1fr 1fr;
-  align-items:center;
-  gap:35px;
-  padding:28px 0;
-  border-top:1px solid #ccc;
-}
-
-.course-name{
-  font-size:30px;
-  font-weight:bold;
-  text-align:center;
-}
-
-.price-box{
-  text-align:center;
-}
-
-.price-label{
-  background:#ddd;
-  color:#555;
-  font-size:28px;
-  font-weight:bold;
-  border-radius:8px;
-  padding:4px 0;
-  margin-bottom:12px;
-}
-
-.price{
-  color:red;
-  font-size:26px;
-  font-weight:bold;
-}
-
-.bottom{
-  margin-top:25px;
-}
-
-/* スマホ */
-@media (max-width:700px){
-  .course-title{
-    font-size:34px;
-  }
-
-  .course-row{
-    grid-template-columns:1fr;
-    gap:16px;
-  }
-
-  .course-name{
-    font-size:26px;
-  }
-
-  .price-label{
-    font-size:24px;
-  }
-
-  .price{
-    font-size:24px;
-  }
-}
-
-.course-title{
-  text-align:center;
-}
-
-.course-subtitle{
-  display:block;
-
-  font-size:0.7em;
-
-  margin-top:8px;
-}
-
-.course-note-box p{
-  margin:0;
-  line-height:1.7;
-}
-
-.red{
-  color:red;
-}
-
-.course-warning{
+.box{
   background:white;
-
-  border:2px solid #ffb3b3;
-
-  border-left:8px solid #ff5a5a;
-
-  border-radius:12px;
-
-  padding:16px 20px;
-
-  margin:20px 0;
-
-  box-shadow:0 0 10px rgba(0,0,0,0.05);
-}
-
-.course-warning p{
-  margin:4px 0;
-
-  line-height:1.7;
-}
-
-.warning-title{
-  font-size:20px;
-
-  font-weight:bold;
-
-  color:#ff4d4d;
-
-  margin-bottom:10px;
-}
-
-.red{
-  color:red;
-}
-
-.course-warning.small{
-  margin:10px 0 22px;
-  padding:12px 16px;
-  font-size:15px;
-}
-
-.course-warning.small p{
-  margin:3px 0;
-}
-
-.qa-page{
-  max-width:1000px;
-  margin:30px auto;
-  padding:0 20px;
-}
-
-.qa-title{
-  text-align:center;
-  color:#e56b6b;
-  font-size:42px;
-  margin-bottom:30px;
-}
-
-.qa-box{
-  background:white;
-  border:1px solid #e5e5e5;
-  border-radius:12px;
-  padding:16px 20px;
-  margin-bottom:14px;
-}
-
-.qa-box summary{
-  font-weight:bold;
-  font-size:18px;
-  cursor:pointer;
-}
-
-.qa-box p,
-.qa-box li{
-  line-height:1.8;
-}
-
-.qa-warning{
-  background:#fff7f7;
-  border:2px solid #ffb3b3;
-  border-left:8px solid #ff5a5a;
-  border-radius:12px;
-  padding:14px 18px;
-  margin-top:18px;
-}
-
-.qa-warning p{
-  margin:6px 0;
-}
-
-.station-title{
-  margin-top:24px;
-}
-
-.station-box{
-  background:#fff;
-  border:1px solid #ddd;
+  padding:20px;
   border-radius:10px;
-  padding:12px 16px;
-  margin:10px 0;
-}
-
-.station-box summary{
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.red{
-  color:red;
-}
-
-.qa-lead{
-  background:white;
-  border-radius:12px;
-  padding:20px;
   margin-bottom:20px;
-  line-height:1.8;
+  box-shadow:0 0 10px rgba(0,0,0,0.08);
 }
 
-.qa-content-block{
-  margin-top:16px;
-}
 
-.qa-content-block h3{
-  font-size:17px;
-  margin:22px 0 8px;
-}
-
-.bold{
-  font-weight:bold;
-}
-
-.top-guide{
-  max-width:1000px;
-  margin:30px auto;
-  padding:20px;
-  background:white;
-  border-radius:12px;
-  font-weight:bold;
-  line-height:1.8;
-}
-
-.top-guide p{
-  margin:4px 0;
-}
-
-.manager-message{
-  max-width:1000px;
-  margin:30px auto;
-  padding:0 20px 30px;
-  line-height:1.8;
-}
-
-.manager-message hr{
-  border:none;
-  border-top:1px dotted #999;
-  margin:24px 0;
-}
-
-.manager-photo{
-  width:280px;
-  max-width:100%;
-  display:block;
-  margin:0 0 14px;
-}
-
-.message-text{
-  font-size:16px;
-  color:#333;
-}
-
-.message-text p{
-  margin:8px 0;
-}
-
-/* スマホ */
-@media (max-width:700px){
-  .top-guide{
-    margin:20px;
-    font-size:15px;
-  }
-
-  .manager-message{
-    padding:0 20px 30px;
-  }
-
-  .manager-photo{
-    width:220px;
-  }
-}
-
+/* =========================
+   06. 更新情報
+========================= */
 
 .news-box{
   max-width:900px;
@@ -681,123 +336,365 @@ hr{
 }
 
 
+/* =========================
+   07. TOPページ
+========================= */
+
+.top-guide{
+  max-width:1000px;
+  margin:30px auto;
+  padding:20px;
+  background:white;
+  border-radius:12px;
+  font-weight:bold;
+  line-height:1.8;
+}
+
+.top-guide p{
+  margin:4px 0;
+}
+
+.manager-message{
+  max-width:1000px;
+  margin:30px auto;
+  padding:0 20px 30px;
+  line-height:1.8;
+}
+
+.manager-message hr{
+  border:none;
+  border-top:1px dotted #999;
+  margin:24px 0;
+}
+
+.manager-photo{
+  width:280px;
+  max-width:100%;
+  display:block;
+  margin:0 0 14px;
+}
+
+.message-text{
+  font-size:16px;
+  color:#333;
+}
+
+.message-text p{
+  margin:8px 0;
+}
+
+
+/* =========================
+   08. QRページ
+========================= */
+
+.qr-page{
+  max-width:1000px;
+  margin:0 auto;
+  padding:40px 20px;
+  background:#efefef;
+}
+
+.qr-title{
+  text-align:center;
+  color:#e26d6d;
+  font-size:48px;
+  margin-bottom:50px;
+}
+
+.qr-box{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
+  padding:30px 0;
+}
+
+.qr-info h3{
+  font-size:42px;
+  margin:0 0 20px;
+}
+
+.qr-info p{
+  font-size:54px;
+  font-weight:bold;
+  margin:0;
+}
+
+.qr-image img{
+  width:400px;
+  max-width:100%;
+}
+
+
+/* =========================
+   09. コースページ
+========================= */
+
+.course-page{
+  max-width:1000px;
+  margin:0 auto;
+  padding:30px 20px;
+  background:#f7f7f7;
+}
+
+.course-title{
+  text-align:center;
+  color:#e56b6b;
+  font-size:46px;
+  margin:0 0 25px;
+}
+
+.course-subtitle{
+  display:block;
+  font-size:0.7em;
+  margin-top:8px;
+}
+
+.course-note-box{
+  font-size:16px;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.course-note-box p{
+  margin:0;
+  line-height:1.7;
+}
+
+.course-note-box span{
+  color:red;
+}
+
+.course-row{
+  display:grid;
+  grid-template-columns:1.1fr 1fr 1fr;
+  align-items:center;
+  gap:35px;
+  padding:28px 0;
+  border-top:1px solid #ccc;
+}
+
+.course-name{
+  font-size:30px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.price-box{
+  text-align:center;
+}
+
+.price-label{
+  background:#ddd;
+  color:#555;
+  font-size:28px;
+  font-weight:bold;
+  border-radius:8px;
+  padding:4px 0;
+  margin-bottom:12px;
+}
+
+.price{
+  color:red;
+  font-size:26px;
+  font-weight:bold;
+}
+
+.bottom{
+  margin-top:25px;
+}
+
+
+/* =========================
+   10. 注意事項BOX
+========================= */
+
+.course-warning{
+  background:white;
+  border:2px solid #ffb3b3;
+  border-left:8px solid #ff5a5a;
+  border-radius:12px;
+  padding:16px 20px;
+  margin:20px 0;
+  box-shadow:0 0 10px rgba(0,0,0,0.05);
+}
+
+.course-warning p{
+  margin:4px 0;
+  line-height:1.7;
+}
+
+.course-warning.small{
+  margin:10px 0 22px;
+  padding:12px 16px;
+  font-size:15px;
+}
+
+.course-warning.small p{
+  margin:3px 0;
+}
+
+.warning-title{
+  font-size:20px;
+  font-weight:bold;
+  color:#ff4d4d;
+  margin-bottom:10px;
+}
+
+
+/* =========================
+   11. Q&Aページ
+========================= */
+
+.qa-page{
+  max-width:1000px;
+  margin:30px auto;
+  padding:0 20px;
+}
+
+.qa-title{
+  text-align:center;
+  color:#e56b6b;
+  font-size:42px;
+  margin-bottom:30px;
+}
+
+.qa-lead{
+  background:white;
+  border-radius:12px;
+  padding:20px;
+  margin-bottom:20px;
+  line-height:1.8;
+}
+
+.qa-box{
+  background:white;
+  border:1px solid #e5e5e5;
+  border-radius:12px;
+  padding:16px 20px;
+  margin-bottom:14px;
+}
+
+.qa-box summary{
+  font-weight:bold;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.qa-box p,
+.qa-box li{
+  line-height:1.8;
+}
+
+.qa-content-block{
+  margin-top:16px;
+}
+
+.qa-content-block h3{
+  font-size:17px;
+  margin:22px 0 8px;
+}
+
+.qa-warning{
+  background:#fff7f7;
+  border:2px solid #ffb3b3;
+  border-left:8px solid #ff5a5a;
+  border-radius:12px;
+  padding:14px 18px;
+  margin-top:18px;
+}
+
+.qa-warning p{
+  margin:6px 0;
+}
+
+
+/* =========================
+   12. 駅一覧
+========================= */
+
+.station-title{
+  margin-top:24px;
+}
+
+.station-box{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:12px 16px;
+  margin:10px 0;
+}
+
+.station-box summary{
+  font-weight:bold;
+  cursor:pointer;
+}
+
+
+/* =========================
+   13. スマホ対応
+========================= */
+
 @media (max-width:700px){
 
-  .dropdown-content{
-    position:absolute;
-    left:0;
-    right:auto;
-    min-width:220px;
+  main{
+    padding:0 12px;
   }
 
-  .submenu-content{
-    position:static;
-    display:none;
-    min-width:100%;
-    box-shadow:none;
-    border-radius:0;
+  .top-guide{
+    margin:20px;
+    font-size:15px;
   }
 
-  .submenu:hover .submenu-content{
-    display:block;
+  .manager-message{
+    padding:0 20px 30px;
   }
 
-  .submenu-content a{
-    padding-left:32px;
-    background:#222;
+  .manager-photo{
+    width:220px;
   }
 
-}
+  .qr-box{
+    flex-direction:column;
+  }
 
-.header-overlay{
-  overflow:visible;
-}
+  .qr-info{
+    text-align:center;
+    width:100%;
+  }
 
-.site-header{
-  overflow:visible;
-}
+  .qr-title{
+    font-size:32px;
+  }
 
-.menu-toggle{
-  display:none;
-}
+  .qr-info h3{
+    font-size:30px;
+  }
 
-/* スマホ */
-@media (max-width:700px){
+  .qr-info p{
+    font-size:40px;
+  }
 
-  .menu-toggle{
-    display:block;
-    position:absolute;
-    top:16px;
-    right:16px;
-    z-index:10001;
-    background:none;
-    border:none;
-    color:white;
+  .course-title{
     font-size:34px;
-    cursor:pointer;
   }
 
-  .header-nav{
-    display:none;
+  .course-row{
+    grid-template-columns:1fr;
+    gap:16px;
   }
 
-  .header-nav.active{
-    display:block;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    background:#fff;
-    z-index:10000;
-    padding-top:60px;
-    overflow-y:auto;
+  .course-name{
+    font-size:26px;
   }
 
-  .header-nav.active a,
-  .header-nav.active .dropbtn{
-    color:#333;
-    text-shadow:none;
-    font-size:18px;
+  .price-label{
+    font-size:24px;
   }
 
-  .header-nav.active > a,
-  .header-nav.active .dropdown{
-    display:block;
-    border-bottom:1px solid #eee;
+  .price{
+    font-size:24px;
   }
 
-  .header-nav.active > a,
-  .header-nav.active .dropbtn{
-    width:100%;
-    padding:16px 24px;
-    text-align:left;
-  }
-
-  .dropdown-content,
-  .submenu-content{
-    position:static;
-    display:none;
-    box-shadow:none;
-    background:#f8f8f8;
-    border-radius:0;
-  }
-
-  .dropdown.open .dropdown-content{
-    display:block;
-  }
-
-  .submenu.open .submenu-content{
-    display:block;
-  }
-
-  .dropdown-content a{
-    color:#333;
-    padding:14px 40px;
-  }
-
-  .submenu-content a{
-    padding-left:60px;
-    background:#fff;
-  }
 }
